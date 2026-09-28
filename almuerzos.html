@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Almuerzos - Cafetería Escolar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="menu-nav-header">
+        <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        <h1 class="page-category-title">Menú de Almuerzos</h1>
+    </header>
+
+    <main class="app-landing visible-active">
+
+        <!-- LA COMIDA DEL DÍA / LA ESPECIALIDAD -->
+        <section class="special-section">
+            <div class="badge-featured">🔥 La Especialidad del Día</div>
+            
+            <div class="dish-card highlight-card">
+                <div class="dish-info">
+                    <p class="dish-quote">"El sabor casero reconfortante que necesitas a mitad de la jornada."</p>
+                    <h2 class="dish-title">Combo Milanesa Suprema con Chilaquiles</h2>
+                    
+                    <ul class="dish-ingredients">
+                        <li>Milanesa de pechuga de pollo crujiente empanizada</li>
+                        <li>Porción de chilaquiles rojos o verdes con queso y crema</li>
+                        <li>Frijoles refritos caseros</li>
+                        <li>Ensalada fresca de lechuga, jitomate y pepino</li>
+                        <li>Incluye 1 litro de Agua Fresca del Día (Horchata/Jamaica)</li>
+                    </ul>
+
+                    <div class="dish-footer">
+                        <span class="dish-price">$65.00</span>
+                        <button class="btn-order" 
+                                data-name="Combo Milanesa Suprema con Chilaquiles" 
+                                data-price="65.00" 
+                                data-ingredients="Milanesa de pollo, Chilaquiles rojos/verdes, Queso y crema, Frijoles refritos, Ensalada fresca, Agua de 1L">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish-image-wrapper">
+                    <img src="comida-del-dia.jpg" alt="Milanesa Suprema" class="dish-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- MENÚ EN GENERAL -->
+        <section class="general-menu-section">
+            <h3 class="section-title">Menú General de <strong>Almuerzos</strong></h3>
+            
+            <div class="menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-info">
+                        <p class="dish-quote">"Torta monumental para calmar hasta la mayor de las hambres."</p>
+                        <h3 class="dish-title">Torta Cubana Especial</h3>
+                        <ul class="dish-ingredients">
+                            <li>Telera doradita con mantequilla</li>
+                            <li>Milanesa, jamón, salchicha, quesillo y queso amarillo</li>
+                            <li>Jitomate, cebolla, aguacate y chiles en vinagre</li>
+                            <li>Mayonesa y frijoles untados</li>
+                        </ul>
+                        <div class="dish-footer">
+                            <span class="dish-price">$55.00</span>
+                            <button class="btn-order" 
+                                    data-name="Torta Cubana Especial" 
+                                    data-price="55.00" 
+                                    data-ingredients="Telera, Milanesa, Jamón, Salchicha, Quesillo, Queso amarillo, Aguacate, Jitomate y cebolla, Chiles">
+                                Pedir Ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dish-image-wrapper">
+                        <img src="tortaC.jpg" alt="Torta Cubana" class="dish-image">
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-info">
+                        <p class="dish-quote">"Sano, fresco y lleno de sabor para rendir sin pesadez."</p>
+                        <h3 class="dish-title">Bowl Fitness de Pollo a la Plancha</h3>
+                        <ul class="dish-ingredients">
+                            <li>Tiras de pechuga a la plancha sazonadas</li>
+                            <li>Cama de arroz integral o quinua</li>
+                            <li>Mezcla de verduras al vapor (brócoli, zanahoria, elote)</li>
+                            <li>Aderezo balsámico o de mostaza dulce</li>
+                        </ul>
+                        <div class="dish-footer">
+                            <span class="dish-price">$60.00</span>
+                            <button class="btn-order" 
+                                    data-name="Bowl Fitness de Pollo" 
+                                    data-price="60.00" 
+                                    data-ingredients="Pechuga a la plancha, Arroz integral, Verduras al vapor, Aderezo balsámico">
+                                Pedir Ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dish-image-wrapper">
+                        <img src="bowl-pollo.jpg" alt="Bowl Fitness" class="dish-image">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL DE CONFIRMACIÓN / MODIFICACIÓN DE PEDIDO -->
+    <div id="order-modal" class="modal-container hidden">
+        <div class="modal-card">
+            <h3>Confirma o Modifica tu Pedido</h3>
+            <p id="modal-dish-title" class="modal-dish-name"></p>
+            <p class="modal-instructions">Puedes desmarcar o cambiar lo que no desees en tu platillo:</p>
+            
+            <form id="order-form">
+                <div id="modal-ingredients-list" class="checkbox-group"></div>
+
+                <div class="form-group">
+                    <label for="custom-notes">Notas adicionales o indicaciones especiales:</label>
+                    <input type="text" id="custom-notes" placeholder="Ej: Sin mayonesa, salsa aparte, extra picante...">
+                </div>
+
+                <div class="modal-total">
+                    Total: <span id="modal-dish-price">$0.00</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancel" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-confirm">Confirmar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE ÉXITO -->
+    <div id="success-modal" class="modal-container hidden">
+        <div class="modal-card text-center">
+            <div class="success-icon">✅</div>
+            <h2>¡Pedido Realizado con Éxito!</h2>
+            <p>Tu orden ha sido enviada a la cocina.</p>
+            
+            <div class="order-number-box">
+                <span>Número de Pedido para Recoger:</span>
+                <strong id="ticket-number">#ALM-000</strong>
+            </div>
+
+            <p class="success-subtitle">Presenta este folio en la caja para pagar y recoger tu comida.</p>
+            <a href="index.html" class="btn-confirm">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postres del Día - Cafetería Escolar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="menu-nav-header">
+        <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        <h1 class="page-category-title">Postres del Día</h1>
+    </header>
+
+    <main class="app-landing visible-active">
+
+        <!-- LA COMIDA DEL DÍA / LA ESPECIALIDAD -->
+        <section class="special-section">
+            <div class="badge-featured">🍓 El Gustito del Día</div>
+            
+            <div class="dish-card highlight-card">
+                <div class="dish-info">
+                    <p class="dish-quote">"Un toque dulce para endulzar tus tardes de estudio."</p>
+                    <h2 class="dish-title">Fresas con Crema Especiales</h2>
+                    
+                    <ul class="dish-ingredients">
+                        <li>Fresas orgánicas desinfectadas y picadas</li>
+                        <li>Crema dulce secreta de la casa</li>
+                        <li>Chispas de chocolate o granillo</li>
+                        <li>Nuez picada y galleta waffle crujiente</li>
+                        <li>Topping extra de Chantilly</li>
+                    </ul>
+
+                    <div class="dish-footer">
+                        <span class="dish-price">$25.00</span>
+                        <button class="btn-order" 
+                                data-name="Fresas con Crema Especiales" 
+                                data-price="25.00" 
+                                data-ingredients="Fresas frescas, Crema dulce de la casa, Chispas de chocolate, Nuez picada, Galleta waffle, Chantilly">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish-image-wrapper">
+                    <img src="botanas.jpg" alt="Fresas con Crema" class="dish-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- MENÚ EN GENERAL -->
+        <section class="general-menu-section">
+            <h3 class="section-title">Menú General de <strong>Postres</strong></h3>
+            
+            <div class="menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-info">
+                        <p class="dish-quote">"La receta secreta casera con el caramelo en su punto."</p>
+                        <h3 class="dish-title">Rebanada de Flan Napolitano</h3>
+                        <ul class="dish-ingredients">
+                            <li>Rebanada individual bien servida</li>
+                            <li>Caramelo líquido dorado</li>
+                            <li>Toque de vainilla natural</li>
+                        </ul>
+                        <div class="dish-footer">
+                            <span class="dish-price">$22.00</span>
+                            <button class="btn-order" 
+                                    data-name="Rebanada de Flan Napolitano" 
+                                    data-price="22.00" 
+                                    data-ingredients="Flan napolitano casero, Caramelo líquido, Cereza de adorno">
+                                Pedir Ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dish-image-wrapper">
+                        <img src="flan.jpg" alt="Flan Napolitano" class="dish-image">
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-info">
+                        <p class="dish-quote">"Saludable, cremosito y súper refrescante."</p>
+                        <h3 class="dish-title">Copa de Yogurt con Frutas y Granola</h3>
+                        <ul class="dish-ingredients">
+                            <li>Yogurt natural o de fresa</li>
+                            <li>Fruta de temporada (Mango, Melón, Fresa)</li>
+                            <li>Granola crujiente con miel</li>
+                        </ul>
+                        <div class="dish-footer">
+                            <span class="dish-price">$20.00</span>
+                            <button class="btn-order" 
+                                    data-name="Copa de Yogurt con Frutas" 
+                                    data-price="20.00" 
+                                    data-ingredients="Yogurt natural, Fruta de temporada picada, Granola con miel">
+                                Pedir Ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dish-image-wrapper">
+                        <img src="fruta.jpg" alt="Yogurt con Fruta" class="dish-image">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL DE CONFIRMACIÓN / MODIFICACIÓN DE PEDIDO -->
+    <div id="order-modal" class="modal-container hidden">
+        <div class="modal-card">
+            <h3>Confirma o Modifica tu Pedido</h3>
+            <p id="modal-dish-title" class="modal-dish-name"></p>
+            <p class="modal-instructions">Puedes desmarcar o cambiar lo que no desees en tu platillo:</p>
+            
+            <form id="order-form">
+                <div id="modal-ingredients-list" class="checkbox-group"></div>
+
+                <div class="form-group">
+                    <label for="custom-notes">Notas adicionales o indicaciones especiales:</label>
+                    <input type="text" id="custom-notes" placeholder="Ej: Poca crema, sin nuez, extra miel...">
+                </div>
+
+                <div class="modal-total">
+                    Total: <span id="modal-dish-price">$0.00</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancel" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-confirm">Confirmar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE ÉXITO -->
+    <div id="success-modal" class="modal-container hidden">
+        <div class="modal-card text-center">
+            <div class="success-icon">✅</div>
+            Two<h2>¡Pedido Realizado con Éxito!</h2>
+            <p>Tu orden ha sido registrada.</p>
+            
+            <div class="order-number-box">
+                <span>Número de Pedido para Recoger:</span>
+                <strong id="ticket-number">#POS-000</strong>
+            </div>
+
+            <p class="success-subtitle">Presenta este folio en la caja para pagar y recoger tu postre.</p>
+            <a href="index.html" class="btn-confirm">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

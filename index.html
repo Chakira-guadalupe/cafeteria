@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Escolar - Menú & Servicios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- PANTALLA DE CARGA (SPLASH SCREEN) -->
+    <div id="splash-screen" class="splash-container">
+        <div class="mayan-bg-overlay"></div>
+        <div class="splash-content">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Cafetería Escolar Logo" class="logo-image">
+            </div>
+            <h1 class="brand-name">CAFETERÍA ESCOLAR</h1>
+            <div class="slogan-container">
+                <p class="slogan-text text-main">COMIDA RÁPIDA, FRESCA Y ECONÓMICA.</p>
+                <p class="slogan-text text-sub">TU MEJOR OPCIÓN PARA CADA RECESO.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="main-content" class="hidden app-landing">
+        
+        <!-- HERO SECTION / CARRUSEL -->
+        <section class="hero-section">
+            <div class="hero-text-block">
+                <h2 class="hero-title">El sazón perfecto para rendir al <strong>máximo en tus clases</strong></h2>
+                <p class="hero-subtitle">Te ofrecemos un menú súper amplio con tortas, sándwiches, comidas del día, botanas y bebidas preparadas al momento, listas para que no pierdas tiempo en el receso.</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <div class="carousel-slide active">
+                        <img src="tortas.jpg" alt="Tortas y Sándwiches" class="carousel-img">
+                        <div class="slide-caption">
+                            <h4>Tortas & Sándwiches</h4>
+                            <p class="slide-desc">De milanesa, cubanas, jamón con queso o atún bien servidas.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="comida-del-dia.jpg" alt="Comida del Día" class="carousel-img">
+                        <div class="slide-caption">
+                            <h4>Comidas del Día</h4>
+                            <p class="slide-desc">Guisados caseros completos con arroz, frijoles y tortillas.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="aguas.jpg" alt="Aguas Frescas y Bebidas" class="carousel-img">
+                        <div class="slide-caption">
+                            <h4>Aguas & Bebidas</h4>
+                            <p class="slide-desc">Aguas de sabor natural, licuados, embotellados y café caliente.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="botanas.jpg" alt="Botanas y Snacks" class="carousel-img">
+                        <div class="slide-caption">
+                            <h4>Botanas & Snacks</h4>
+                            <p class="slide-desc">Papas, frutas preparadas, yogur, galletas y postres del día.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-btn next-btn" id="nextBtn" aria-label="Siguiente">&#10095;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE BENEFICIOS -->
+        <section class="benefits-section scroll-animate">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Atención Rápida</h3>
+                <p>Múltiples barras de cobro para que no hagas filas largas en tu receso.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💵</div>
+                <h3>Siempre con Cambio</h3>
+                <p>Aceptamos billetes de cualquier denominación, tarjetas y pago QR sin pretextos.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🥗</div>
+                <h3>Ingredientes Frescos</h3>
+                <p>Alimentos e insumos preparados cada mañana garantizando calidad e higiene.</p>
+            </div>
+        </section>
+
+        <!-- PÚBLICO Y MENÚ -->
+        <section class="segment-pricing-section scroll-animate">
+            <div class="audience-box">
+                <h3>Menú Amplio & Variedad</h3>
+                <ul>
+                    <li>🥪 Tortas Gigantes, Baguettes & Sándwiches Integrales</li>
+                    <li>🍲 Comidas Completas & Guisados del Día</li>
+                    <li>🥤 Aguas Naturales de Litro, Jugos & Licuados</li>
+                    <li>🍿 Botanas, Fruta Picada, Galletas & Postres</li>
+                </ul>
+            </div>
+
+            <div class="pricing-container">
+                <div class="price-card">
+                    <h4>Desayuno</h4>
+                    <p class="price">$45 <span>/ combo</span></p>
+                    <a href="desayunos.html" class="btn-price-info">Ver Opciones</a>
+                </div>
+                
+                <div class="price-card featured">
+                    <h4>Almuerzo</h4>
+                    <p class="price">$65 <span>/ combo</span></p>
+                    <a href="almuerzos.html" class="btn-price-info">Ver Opciones</a>
+                </div>
+                
+                <div class="price-card">
+                    <h4>Postre del Día</h4>
+                    <p class="price">$25 <span>/ porción</span></p>
+                    <a href="postres.html" class="btn-price-info">Ver Opciones</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACORDEÓN / FAQ -->
+        <section class="faq-section scroll-animate">
+            <h3 class="section-title">Preguntas <strong>Frecuentes</strong></h3>
+            <div class="accordion-item">
+                <button class="accordion-header">¿Qué tan caros son los platillos? <span>+</span></button>
+                <div class="accordion-content">
+                    <p>Manejamos costos 100% pensados para estudiantes. Encontrarás botanas desde $15, lonches desde $30 y comidas completas bien servidas a precios accesibles.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">¿Se demoran mucho en atender durante los recesos? <span>+</span></button>
+                <div class="accordion-content">
+                    <p>No, contamos con varias cajas de cobro activas en las horas pico y barras de entrega rápida para que te dé tiempo de comer tranquilamente antes de tu clase.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">¿Tienen cambio si pago con billetes grandes o aceptan transferencia? <span>+</span></button>
+                <div class="accordion-content">
+                    <p>Sí, siempre tenemos cambio en caja disponible para billetes de $200 o $500, y también aceptamos tarjetas de débito/crédito y pago por código QR.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">¿Manejan opciones de comida saludable o vegetariana? <span>+</span></button>
+                <div class="accordion-content">
+                    <p>Contamos con fruta fresca recién picada, ensaladas preparadas al momento, sándwiches integrales y opciones sin carne para adaptarnos a tus gustos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="testimonials-section scroll-animate">
+            <h3 class="section-title">Experiencias de <strong>Estudiantes y Docentes</strong></h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-comment">"Nunca se demoran en atender a pesar de la fila del receso. Además, siempre tienen cambio cuando pago con billetes grandes y los sándwiches vienen súper bien servidos."</p>
+                    <span class="testimonial-author">- Carlos R., Estudiante</span>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-comment">"El paquete de almuerzo con comida del día vale totalmente la pena por el precio, sabe como si fuera hecha en casa y la atención es excelente."</p>
+                    <span class="testimonial-author">- Prof. Fernando G., Docente</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER CON BOTONES DE NAVEGACIÓN -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Cafetería Escolar. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <button class="footer-btn" id="openContactBtn">Contacto</button>
+                <a href="https://maps.app.goo.gl/mCL6hw6i3RMhSEuj9" target="_blank" rel="noopener noreferrer" class="footer-btn-link">Ubicación</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- VENTANA POPUP DE CONTACTO (MODAL) -->
+    <div id="contactModal" class="modal-backdrop">
+        <div class="modal-box">
+            <button class="modal-close" id="closeContactBtn">&times;</button>
+            <div class="modal-logo-container">
+                <img src="logo.png" alt="Logo Cafetería Escolar" class="modal-logo">
+            </div>
+            <h3 class="modal-title">Contacto</h3>
+            <p class="modal-subtitle">¿Tienes alguna duda o pedido especial? ¡Escríbenos o llámanos!</p>
+            <div class="modal-phone-box">
+                <span class="modal-phone-icon">📞</span>
+                <a href="tel:+527221024625" class="modal-phone-link">+52 (722) 102-4625</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

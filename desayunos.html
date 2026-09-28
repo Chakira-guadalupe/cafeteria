@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Desayunos - Cafetería Escolar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="menu-nav-header">
+        <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        <h1 class="page-category-title">Menú de Desayunos</h1>
+    </header>
+
+    <main class="app-landing visible-active">
+
+        <!-- LA COMIDA DEL DÍA / LA ESPECIALIDAD -->
+        <section class="special-section">
+            <div class="badge-featured">⭐ La Especialidad del Día</div>
+            
+            <div class="dish-card highlight-card">
+                <div class="dish-info">
+                    <p class="dish-quote">"¡El empujón de energía perfecto para iniciar tus mañanas de examen!"</p>
+                    <h2 class="dish-title">Combo Chilaquiles Energéticos con Huevo</h2>
+                    
+                    <ul class="dish-ingredients">
+                        <li>Totopos crujientes de maíz hechos en casa</li>
+                        <li>Salsa verde o roja al gusto</li>
+                        <li>Queso fresco rallado y crema de rancho</li>
+                        <li>Dos huevos al gusto (estrellados o revueltos)</li>
+                        <li>Acompañado de frijoles refritos y café americano o té de refill</li>
+                    </ul>
+
+                    <div class="dish-footer">
+                        <span class="dish-price">$45.00</span>
+                        <button class="btn-order" 
+                                data-name="Combo Chilaquiles Energéticos con Huevo" 
+                                data-price="45.00" 
+                                data-ingredients="Totopos crujientes, Salsa verde o roja, Queso fresco, Crema, 2 Huevos al gusto, Frijoles refritos, Café o Té">
+                            Pedir Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish-image-wrapper">
+                    <img src="desayunos.jpg" alt="Chilaquiles Especiales" class="dish-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- MENÚ EN GENERAL -->
+        <section class="general-menu-section">
+            <h3 class="section-title">Menú General de <strong>Desayunos</strong></h3>
+            
+            <div class="menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-info">
+                        <p class="dish-quote">"El clásico de la cafetería que nunca falla antes de tu primera clase."</p>
+                        <h3 class="dish-title">Sándwich Integral de Pavo y Queso</h3>
+                        <ul class="dish-ingredients">
+                            <li>Pan integral de siete granos</li>
+                            <li>Pechuga de pavo horneada y queso manchego</li>
+                            <li>Jitomate, lechuga fresca y aguacate</li>
+                            <li>Aderezo de yogurt con hierbas</li>
+                        </ul>
+                        <div class="dish-footer">
+                            <span class="dish-price">$35.00</span>
+                            <button class="btn-order" 
+                                    data-name="Sándwich Integral de Pavo y Queso" 
+                                    data-price="35.00" 
+                                    data-ingredients="Pan integral, Pechuga de pavo, Queso manchego, Jitomate, Lechuga fresca, Aguacate, Aderezo de yogurt">
+                                Pedir Ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dish-image-wrapper">
+                        <img src="sandwich.jpg" alt="Sándwich Integral" class="dish-image">
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-info">
+                        <p class="dish-quote">"Un toque dulce y calientito para alegrar cualquier mañana fría."</p>
+                        <h3 class="dish-title">Pancakes con Fruta Fresca</h3>
+                        <ul class="dish-ingredients">
+                            <li>3 Hotcakes esponjosos recién hechos</li>
+                            <li>Fresa picada y plátano en rodajas</li>
+                            <li>Miel de abeja o jarabe de maple</li>
+                            <li>Nuez picada y Mantequilla</li>
+                        </ul>
+                        <div class="dish-footer">
+                            <span class="dish-price">$40.00</span>
+                            <button class="btn-order" 
+                                    data-name="Pancakes con Fruta Fresca" 
+                                    data-price="40.00" 
+                                    data-ingredients="3 Hotcakes, Fresa picada, Plátano, Miel de abeja, Mantequilla, Nuez picada">
+                                Pedir Ahora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dish-image-wrapper">
+                        <img src="pancakes.jpg" alt="Pancakes con Fruta" class="dish-image">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL DE CONFIRMACIÓN / MODIFICACIÓN DE PEDIDO -->
+    <div id="order-modal" class="modal-container hidden">
+        <div class="modal-card">
+            <h3>Confirma o Modifica tu Pedido</h3>
+            <p id="modal-dish-title" class="modal-dish-name"></p>
+            <p class="modal-instructions">Puedes desmarcar o cambiar lo que no desees en tu platillo:</p>
+            
+            <form id="order-form">
+                <div id="modal-ingredients-list" class="checkbox-group"></div>
+
+                <div class="form-group">
+                    <label for="custom-notes">Notas adicionales o indicaciones especiales:</label>
+                    <input type="text" id="custom-notes" placeholder="Ej: Sin cebolla, salsa aparte, poca crema...">
+                </div>
+
+                <div class="modal-total">
+                    Total: <span id="modal-dish-price">$0.00</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancel" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-confirm">Confirmar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE ÉXITO -->
+    <div id="success-modal" class="modal-container hidden">
+        <div class="modal-card text-center">
+            <div class="success-icon">✅</div>
+            <h2>¡Pedido Realizado con Éxito!</h2>
+            <p>Tu orden ha sido enviada a la barra de la cafetería.</p>
+            
+            <div class="order-number-box">
+                <span>Número de Pedido para Recoger:</span>
+                <strong id="ticket-number">#DES-000</strong>
+            </div>
+
+            <p class="success-subtitle">Presenta este folio en la caja para pagar y recoger tu comida.</p>
+            <a href="index.html" class="btn-confirm">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>
